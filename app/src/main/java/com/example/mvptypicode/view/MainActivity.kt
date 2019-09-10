@@ -1,7 +1,8 @@
-package com.example.mvptypicode
+package com.example.mvptypicode.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mvptypicode.BaseActivity
+import com.example.mvptypicode.R
 
 class MainActivity : BaseActivity() {
 
