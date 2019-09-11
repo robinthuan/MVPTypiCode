@@ -8,21 +8,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.mvptypicode.BaseActivity
-import com.example.mvptypicode.FragmentPost
 import com.example.mvptypicode.R
-import com.example.mvptypicode.networking.ApiService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import javax.inject.Inject
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
-    val tag = "TEST_MVP"
-    @Inject
-    lateinit var apiService: ApiService
-    lateinit var homePresenter: HomePresenter
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -44,8 +35,7 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
-        getNetworkComponent().inject(this)
-        loadFragment(FragmentPost(), R.id.fr_container_home)
+        loadFragment(HomeFragment(), R.id.fr_container_home)
     }
 
     override fun onBackPressedSupport() {
@@ -78,7 +68,7 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
-                // Handle the camera action
+                replaceFragment(HomeFragment(), false)
             }
             R.id.nav_gallery -> {
 

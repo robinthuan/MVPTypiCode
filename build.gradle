@@ -19,7 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        //SmoothProgressBar
+        maven { url 'https://jitpack.io' }
+
+
     }
 }
 
