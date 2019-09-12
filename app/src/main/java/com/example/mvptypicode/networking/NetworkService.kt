@@ -12,4 +12,7 @@ interface NetworkService {
     @GET("posts/{id}")
     fun detailPost(@Path("id") id: Int): Observable<PostData>
 
+    @get :GET("photos")
+    val galleryList: Observable<List<PostData>>
+
 }

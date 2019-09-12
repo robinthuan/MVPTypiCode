@@ -7,15 +7,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvptypicode.BaseFragment
 import com.example.mvptypicode.R
-import com.example.mvptypicode.Utils.ConstantText
 import com.example.mvptypicode.model.PostData
+import com.example.mvptypicode.utils.ConstantText
+import com.example.mvptypicode.utils.MessageEvent
+import com.example.mvptypicode.view.detail.DetailPostFragment
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.progressbar_layout.*
 import org.greenrobot.eventbus.EventBus
 
 class HomeFragment : BaseFragment(), HomeView {
     override fun detailItemPost(position: Int) {
-     EventBus.builder().sendSubscriberExceptionEvent()
+        EventBus.getDefault().postSticky(MessageEvent(position))
+       // replaceFragment(DetailPostFragment(), true)
+        startFragment(DetailPostFragment())
     }
 
     override fun visibleWaiting() {

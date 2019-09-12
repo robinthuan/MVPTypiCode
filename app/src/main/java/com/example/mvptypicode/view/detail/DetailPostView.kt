@@ -1,5 +1,10 @@
 package com.example.mvptypicode.view.detail
 
-interface DetailPostView {
+import com.example.mvptypicode.model.PostData
 
+interface DetailPostView {
+    fun visibleWaiting()
+    fun disableWaiting()
+    fun getPostDetailSuccess(postData: PostData)
+    fun getPostDetailFailure(error: String)
 }

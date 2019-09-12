@@ -26,7 +26,7 @@ class HomeAdapter(private val listPost: List<PostData>, val homeView: HomeView) 
         holder.title.text = listPost[position].title
         holder.content.text = listPost[position].body
         holder.itemPost.setOnClickListener {
-            homeView.detailItemPost(position)
+            homeView.detailItemPost(listPost[position].id!!)
         }
     }
 

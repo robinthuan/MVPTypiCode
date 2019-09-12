@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
-import com.example.mvptypicode.Utils.ConstantText
+import com.example.mvptypicode.utils.ConstantText
 import com.example.mvptypicode.component.DaggerNetworkComponent
 import com.example.mvptypicode.component.NetworkComponent
 import com.example.mvptypicode.receiver.ConnectivityReceiver

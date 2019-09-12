@@ -1,4 +1,4 @@
-package com.example.mvptypicode.Utils
+package com.example.mvptypicode.utils
 
 class ConstantText {
     companion object {

@@ -3,7 +3,7 @@ package com.example.mvptypicode.callback
 import com.example.mvptypicode.model.PostData
 import com.example.mvptypicode.networking.NetworkError
 
-interface GetPostDetailCallBack {
-    fun getPostDetailSuccess(postData: PostData)
-    fun getPostDetailFailure(networkError: NetworkError)
+interface GetListGalleryCallBack {
+    fun getListGallerySuccess(list: List<PostData>)
+    fun getListGalleryFailure(networkError: NetworkError)
 }

@@ -1,5 +1,6 @@
 package com.example.mvptypicode.networking
 
+import com.example.mvptypicode.callback.GetListGalleryCallBack
 import com.example.mvptypicode.callback.GetListPostCallback
 import com.example.mvptypicode.callback.GetPostDetailCallBack
 import com.example.mvptypicode.model.PostData
@@ -43,10 +44,28 @@ class ApiService(private val network: NetworkService) {
                 }
 
                 override fun onError(e: Throwable?) {
-                    callBack.getPostDetailFailura(NetworkError(e))
+                    callBack.getPostDetailFailure(NetworkError(e))
                 }
 
             })
 
+    }
+
+    fun getListGallery(callback: GetListGalleryCallBack): Subscription {
+        return network.galleryList
+            .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Subscriber<List<PostData>>() {
+                override fun onNext(t: List<PostData>?) {
+                    callback.getListGallerySuccess(t!!)
+                }
+
+                override fun onCompleted() {
+                }
+
+                override fun onError(e: Throwable?) {
+                    callback.getListGalleryFailure(NetworkError(e))
+                }
+
+            })
     }
 }
