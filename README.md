@@ -1,9 +1,10 @@
 # MVP Dagger2 +kotlin +rxjava +retrofit 
-- project appply  MVP dagger +rxjava +kotlin +retrofit <br/>
--explain how to use MVP with dagger and rxjava<br/>
--easy to implement and apply <br/>
--Api referent yo link http://jsonplaceholder.typicode.com/
--some library use in project <br/>
+- Project appply  MVP dagger +rxjava +kotlin +retrofit <br/>
+-Explain how to use MVP with dagger and rxjava<br/>
+-Easy to implement and apply <br/>
+# Api referent <br/>
+http://jsonplaceholder.typicode.com/
+# Some library use in project <br/>
 -Dagger 2
 https://github.com/google/dagger.<br/>
 RxJava
@@ -20,3 +21,4 @@ Toasty
 https://github.com/GrenderG/Toasty.<br/>
 picasso
 https://square.github.io/picasso/.<br/>
+
